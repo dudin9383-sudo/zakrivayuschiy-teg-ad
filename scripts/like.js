@@ -11,11 +11,17 @@ const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () => toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+  iconButton.onclick = (event) => {
+    event.preventDefault();
+    toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+  };
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
+  button.onclick = (event) => {
+    event.preventDefault();
+    toggleIsLiked(likeHeartArray[index], button);
+  };
 });
 
 function toggleIsLiked(heart, button) {
@@ -25,26 +31,35 @@ function toggleIsLiked(heart, button) {
 
 function setButtonText(heart, button) {
   if ([...heart.classList].includes('is-liked')) {
-    setTimeout(() => (button.querySelector('.button__text').textContent = 'Unlike'), 500);
+    setTimeout(
+      () => (button.querySelector('.button__text').textContent = 'Unlike'),
+      500
+    );
   } else {
-    setTimeout(() => (button.querySelector('.button__text').textContent = 'Like'), 500);
+    setTimeout(
+      () => (button.querySelector('.button__text').textContent = 'Like'),
+      500
+    );
   }
 }
 
+// --- Логика работы модального окна ---
 document.addEventListener('DOMContentLoaded', () => {
   const saveButton = document.querySelector('.button-save');
+  const closeButton = document.querySelector('.popup__close-button');
   const dialog = document.querySelector('#popup-dialog');
 
-  saveButton.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    dialog.showModal();
-  });
+  if (saveButton && dialog) {
+    saveButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Блокируем любые перезагрузки
+      dialog.showModal();
+    });
+  }
 
-  
-  const closeButton = document.querySelector('.popup__close-button');
-  if (closeButton) {
+  if (closeButton && dialog) {
     closeButton.addEventListener('click', (event) => {
-      
+      event.preventDefault(); // Блокируем любые перезагрузки
+      dialog.close();
     });
   }
 });

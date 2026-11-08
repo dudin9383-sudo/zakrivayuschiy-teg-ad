@@ -15,7 +15,7 @@
     <link rel="icon" href="../zakrivayuschiy-teg-ad/images/favicon.png">
   </head>
   <body class="page">
-    
+    <!-- Скрытый спрайт иконки -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="save-icon" viewBox="0 0 21 21">
         <rect width="1.61538" height="1.61538" fill="currentColor"/>
@@ -325,21 +325,17 @@
       </button>
       
       <dialog class="popup" id="popup-dialog">
-        
-        <form method="dialog" class="popup__form" style="display: grid; gap: 30px; margin: 0;">
-          <div class="popup__content">
-            <svg class="save-icon" width="39" height="39">
-              <use href="#save-icon"></use>
-            </svg>
-            <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
-          </div>
-          <div class="popup__button-container">
-            <!-- Кнопка type="submit" закроет форму с методом dialog -->
-            <button class="popup__close-button" type="submit">
-              <span class="button__text">Ок</span>
-            </button>
-          </div>
-        </form>
+        <div class="popup__content">
+          <svg class="save-icon" width="39" height="39">
+            <use href="#save-icon"></use>
+          </svg>
+          <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
+        </div>
+        <div class="popup__button-container">
+          <button class="popup__close-button" type="button">
+            <span class="button__text">Ок</span>
+          </button>
+        </div>
       </dialog> 
     </footer>
     
