@@ -315,27 +315,27 @@
       </article>
     </main>
     
-    <!--<footer class="footer">
-      <button class="button-save" type="button" onclick="window['popup-dialog'].showModal()">
-        <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="21" height="21">
+    <footer class="footer">
+    <button class="button-save" type="button">
+      <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="21" height="21">
+        <use href="#save-icon"></use>
+      </svg>
+      <span class="button__text">Сохранить на память</span> 
+    </button>
+    <dialog class="popup" id="popup-dialog">
+      <div class="popup__content">
+        <svg class="popup__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="39" height="39">
           <use href="#save-icon"></use>
         </svg>
-        <span class="button__text">Сохранить на память</span> 
-      </button>
-      <dialog class="popup" id="popup-dialog">
-        <div class="popup__content">
-          <svg class="popup__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="39" height="39">
-            <use href="#save-icon"></use>
-          </svg>
-          <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
-        </div>
-        <div class="popup__button-container">
-          <button class="popup__close-button" type="button" onclick="window['popup-dialog'].close()">
-            <span class="button__text">Ок</span>
-          </button>
-        </div>
-      </dialog> 
-    </footer>-->
+        <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
+      </div>
+      <div class="popup__button-container">
+        <button class="popup__close-button" type="button">
+          <span class="button__text">Ок</span>
+        </button>
+      </div>
+    </dialog> 
+  </footer>
     
     <script src="./scripts/like.js"></script>
   </body>
