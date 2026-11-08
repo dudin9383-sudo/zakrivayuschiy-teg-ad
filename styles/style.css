@@ -191,6 +191,10 @@
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 0.9;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
 .popup[open] {
@@ -304,13 +308,6 @@
 .popup__close-button:focus {
   outline: none;
   box-shadow: 2px 2px var(--accent-color);
-}
-
-.button__text {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  mix-blend-mode: difference;
 }
 
 
