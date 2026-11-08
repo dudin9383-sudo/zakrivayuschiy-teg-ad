@@ -50,6 +50,7 @@ function setButtonText(heart, button) {
 
 const saveButton = document.querySelector('.button-save');
 const popup = document.querySelector('.popup');
+const popup = document.getElementById('popup-dialog');
 const closeButton = document.querySelector('.popup__close-button');
 
 // Важно: проверяем существование элементов, чтобы не было ошибок
@@ -69,3 +70,16 @@ if (closeButton && popup) {
 document.addEventListener('submit', (event) => {
   event.preventDefault();
 });
+
+
+// Обработка клика по кнопке "Сохранить"
+saveButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Гарантированно блокирует перезагрузку
+  popup.showModal();
+});
+
+// Обработка клика по кнопке "Ок" внутри попапа
+closeButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Гарантированно блокирует перезагрузку
+  popup.close();
+}); 
