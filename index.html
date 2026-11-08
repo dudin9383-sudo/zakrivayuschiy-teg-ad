@@ -15,7 +15,6 @@
     <link rel="icon" href="../zakrivayuschiy-teg-ad/images/favicon.png">
   </head>
   <body class="page">
-    <!-- Скрытый спрайт иконки -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="save-icon" viewBox="0 0 21 21">
         <rect width="1.61538" height="1.61538" fill="currentColor"/>
@@ -316,27 +315,25 @@
       </article>
     </main>
     
-            <footer class="footer">
-      <button class="button-save" type="button">
-        <svg class="save-icon" width="21" height="21">
+    <footer class="footer">
+      <button class="button-save" type="button" onclick="window['popup-dialog'].showModal()">
+        <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="21" height="21">
           <use href="#save-icon"></use>
         </svg>
         <span class="button__text">Сохранить на память</span> 
       </button>
-      
       <dialog class="popup" id="popup-dialog">
         <div class="popup__content">
-          <svg class="save-icon" width="39" height="39">
+          <svg class="popup__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="39" height="39">
             <use href="#save-icon"></use>
           </svg>
           <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
         </div>
-        <!-- Нативная форма, которая закрывает окно без JS и перезагрузок -->
-        <form method="dialog" class="popup__form">
-          <button class="popup__close-button" type="submit">
+        <div class="popup__button-container">
+          <button class="popup__close-button" type="button" onclick="window['popup-dialog'].close()">
             <span class="button__text">Ок</span>
           </button>
-        </form>
+        </div>
       </dialog> 
     </footer>
     
