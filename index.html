@@ -316,7 +316,7 @@
       </article>
     </main>
     
-        <footer class="footer">
+            <footer class="footer">
       <button class="button-save" type="button">
         <svg class="save-icon" width="21" height="21">
           <use href="#save-icon"></use>
@@ -331,8 +331,8 @@
           </svg>
           <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
         </div>
-        <!-- Нативная форма для закрытия окна -->
-        <form method="dialog">
+        <!-- Нативная форма, которая закрывает окно без JS и перезагрузок -->
+        <form method="dialog" class="popup__form">
           <button class="popup__close-button" type="submit">
             <span class="button__text">Ок</span>
           </button>

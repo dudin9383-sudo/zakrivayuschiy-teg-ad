@@ -38,6 +38,7 @@ function setButtonText(heart, button) {
   }
 }
 
+// --- Логика открытия модального окна ---
 const saveButton = document.querySelector('.button-save');
 const dialog = document.querySelector('#popup-dialog');
 
