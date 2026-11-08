@@ -316,7 +316,7 @@
       </article>
     </main>
     
-    <footer class="footer">
+        <footer class="footer">
       <button class="button-save" type="button">
         <svg class="save-icon" width="21" height="21">
           <use href="#save-icon"></use>
@@ -331,11 +331,12 @@
           </svg>
           <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
         </div>
-        <div class="popup__button-container">
-          <button class="popup__close-button" type="button">
+        <!-- Нативная форма для закрытия окна -->
+        <form method="dialog">
+          <button class="popup__close-button" type="submit">
             <span class="button__text">Ок</span>
           </button>
-        </div>
+        </form>
       </dialog> 
     </footer>
     
