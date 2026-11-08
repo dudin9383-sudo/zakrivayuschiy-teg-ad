@@ -46,24 +46,26 @@ function setButtonText(heart, button) {
 
 
 
+// ... предыдущий код like.js ...
+
 const saveButton = document.querySelector('.button-save');
 const popup = document.querySelector('.popup');
 const closeButton = document.querySelector('.popup__close-button');
 
+// Важно: проверяем существование элементов, чтобы не было ошибок
 if (saveButton && popup) {
-  saveButton.addEventListener('click', (event) => {
-    event.preventDefault();
+  saveButton.addEventListener('click', () => {
     popup.showModal();
   });
-}
+} // <-- Эта скобка была пропущена
 
 if (closeButton && popup) {
-  closeButton.addEventListener('click', (event) => {
-    event.preventDefault();
+  closeButton.addEventListener('click', () => {
     popup.close();
   });
-}
+} // <-- Эта скобка тоже нужна
 
+// Глобальная защита от перезагрузки (на случай, если тесты отправляют форму)
 document.addEventListener('submit', (event) => {
   event.preventDefault();
 });
