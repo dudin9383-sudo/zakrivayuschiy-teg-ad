@@ -109,7 +109,7 @@
         <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="card__image-container">
           <span class="card__logo">&lt;/HTML&gt;</span>
-          <img class="card__image first-image" src="./images/image.png" alt="Пиксель-арт фургон ночью">
+          <img class="card__image first-image" src="./images/image.png" alt="Пиксель-арт фургон ночью" loading="lazy">
         </div>
         <div class="card__description">
           <p class="card__description-text">Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее.</p> 
@@ -315,8 +315,8 @@
       </article>
     </main>
     
-    <footer class="footer">
-      <button class="button-save" type="button">
+    <!--<footer class="footer">
+      <button class="button-save" type="button" onclick="window['popup-dialog'].showModal()">
         <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" width="21" height="21">
           <use href="#save-icon"></use>
         </svg>
@@ -330,13 +330,13 @@
           <p class="popup__text">Вставьте<br>дискету,&nbsp;чтобы<br>продолжить</p> 
         </div>
         <div class="popup__button-container">
-          <button class="popup__close-button" type="button">
+          <button class="popup__close-button" type="button" onclick="window['popup-dialog'].close()">
             <span class="button__text">Ок</span>
           </button>
         </div>
       </dialog> 
-    </footer>
+    </footer>-->
     
-<script src="./scripts/like.js" defer></script>
+    <script src="./scripts/like.js"></script>
   </body>
 </html>
