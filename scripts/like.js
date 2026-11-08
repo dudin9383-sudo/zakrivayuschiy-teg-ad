@@ -20,43 +20,31 @@ likeButtonArray.forEach((button, index) => {
 });
 
 function toggleIsLiked(heart, button) {
-  if (!heart || !button) return;
   heart.classList.toggle('is-liked');
   setButtonText(heart, button);
 }
 
 function setButtonText(heart, button) {
-  const textElement = button.querySelector('.button__text');
-  if (!textElement) return;
-
   if ([...heart.classList].includes('is-liked')) {
     setTimeout(
-      () => (textElement.textContent = 'Unlike'),
+      () => (button.querySelector('.button__text').textContent = 'Unlike'),
       500
     );
   } else {
     setTimeout(
-      () => (textElement.textContent = 'Like'),
+      () => (button.querySelector('.button__text').textContent = 'Like'),
       500
     );
   }
 }
 
-// --- Логика работы модального окна ---
+// --- Логика открытия модального окна ---
 const saveButton = document.querySelector('.button-save');
-const closeButton = document.querySelector('.popup__close-button');
 const dialog = document.querySelector('#popup-dialog');
 
 if (saveButton && dialog) {
   saveButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Блокируем перезагрузку
+    event.preventDefault(); // Блокируем любые перезагрузки
     dialog.showModal();
-  });
-}
-
-if (closeButton && dialog) {
-  closeButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Блокируем перезагрузку
-    dialog.close();
   });
 }
