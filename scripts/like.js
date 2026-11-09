@@ -49,10 +49,19 @@ const saveButton = document.querySelector('.button-save');
 const popup = document.getElementById('popup-dialog');
 const closeButton = document.querySelector('.popup__close-button');
 
+// Вешаем обработчик и жестко блокируем поведение по умолчанию
 if (saveButton && popup) {
-  saveButton.addEventListener('click', () => popup.showModal());
+  saveButton.addEventListener('click', function(event) {
+    event.preventDefault(); // 1. Отменяем действие
+    event.stopPropagation(); // 2. Не даем событию всплыть выше
+    popup.showModal(); // 3. Открываем диалог
+  });
 }
 
 if (closeButton && popup) {
-  closeButton.addEventListener('click', () => popup.close());
+  closeButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    popup.close();
+  });
 }

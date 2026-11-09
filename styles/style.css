@@ -108,7 +108,7 @@
 }
 
 .fourth-image {
-  filter: grayscale(1);
+  filter: opacity(0.5);
 }
 
 .fifth-image {
